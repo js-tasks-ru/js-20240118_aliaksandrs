@@ -21,4 +21,10 @@ describe('javascript-data-types/pick', () => {
     expect(pick(obj, 'riba')).toEqual({});
     expect(pick(obj, 'riba')).toEqual({});
   });
+
+  it.only('MyTest', () => {
+    const obj = {a: 1, b: undefined, c: null};
+
+    expect(pick(obj, 'a', 'b', 'c')).toEqual({a: 1, b: undefined, c: null});
+  });
 });

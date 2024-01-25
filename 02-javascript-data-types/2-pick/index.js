@@ -6,8 +6,9 @@
  */
 export const pick = (obj, ...fields) => {
   const result = {};
+
   fields.forEach(element => {
-    if (obj[element]) {
+    if (Object.keys(obj).includes(element)) {
       result[element] = obj[element];
     }
   });
