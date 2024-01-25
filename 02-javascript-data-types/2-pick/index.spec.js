@@ -22,7 +22,7 @@ describe('javascript-data-types/pick', () => {
     expect(pick(obj, 'riba')).toEqual({});
   });
 
-  it.only('MyTest', () => {
+  it.only('should return new object with undefined and null field', () => {
     const obj = {a: 1, b: undefined, c: null};
 
     expect(pick(obj, 'a', 'b', 'c')).toEqual({a: 1, b: undefined, c: null});
