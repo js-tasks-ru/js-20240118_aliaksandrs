@@ -57,6 +57,7 @@ describe('objects-arrays-intro-to-testing/create-getter', () => {
     expect(getter({more: {nested: {property: 1}}})).toEqual(1);
   });
 
+
   it('gets value from multistory obj', () => {
     const obj = {
       category: {
@@ -73,4 +74,6 @@ describe('objects-arrays-intro-to-testing/create-getter', () => {
 
     expect(getter(obj)).toEqual(2);
   });
+
+
 });
