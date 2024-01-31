@@ -51,8 +51,6 @@ export default class ColumnChart {
                 ` + this.columnsRender()  + `
               </div>
             </div>`
-          //</div>`
-       // </div>`
       );
   }
 
