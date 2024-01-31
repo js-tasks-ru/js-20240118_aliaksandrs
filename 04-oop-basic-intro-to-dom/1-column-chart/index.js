@@ -40,8 +40,6 @@ export default class ColumnChart {
         );
     }
       return (
-        //`<div class="dashboard__charts">
-        //`<div class="dashboard__chart_orders">
           `<div class="column-chart" style="--chart-height: 50">
             <div class="column-chart__title">
               Total ${this.label}
