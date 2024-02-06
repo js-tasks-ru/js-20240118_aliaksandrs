@@ -10,7 +10,7 @@ export default class ColumnChart {
     this.label = label;
     this.link = link;
     this.value = formatHeading(value);
-    this.chartHeight = this.setChartHeight();
+    this.chartHeight = this.initChartHeight();
     this.element = this.renderElement();
   }
 
@@ -21,7 +21,7 @@ export default class ColumnChart {
   }
 
   template() {
-    if (!this.data || !this.data.length) {
+    if (!this.data.length) {
       return (
           `<div class="column-chart column-chart_loading" style="--chart-height: 50">
             <div class="column-chart__title">
@@ -63,9 +63,7 @@ export default class ColumnChart {
   }
 
   columnsRender() {
-    let result = "";
-    this.data.forEach(el => result += `<div style="--value: ${Number.parseInt(el * (50 / this.chartHeight))}" data-tooltip="${(el / this.chartHeight * 100).toFixed(0)}%"></div>\n`);
-    return result
+    return this.data.map(el => `<div style="--value: ${Number.parseInt(el * (50 / this.chartHeight))}" data-tooltip="${(el / this.chartHeight * 100).toFixed(0)}%"></div>\n`);
   }
 
   update(data) {
@@ -73,7 +71,7 @@ export default class ColumnChart {
     this.columnsRender();
   }
 
-  setChartHeight() {
+  initChartHeight() {
     if (!this.data.length) {
       return 50;
     }
