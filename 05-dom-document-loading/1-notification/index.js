@@ -39,11 +39,11 @@ export default class NotificationMessage {
     this.element.remove();
   }
 
-  show(div={}) {
+  show(container = document.body) {
     if (NotificationMessage.notificationMessage) {
       NotificationMessage.notificationMessage.destroy();
     }
-    div.innerHTML = this.template();
+    container.appendChild(this.element);
 
     NotificationMessage.notificationMessage = this;
     setTimeout(()=>{this.remove()}, this.duration);
